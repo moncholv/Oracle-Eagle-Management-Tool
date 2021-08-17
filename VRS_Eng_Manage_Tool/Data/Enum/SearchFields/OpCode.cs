@@ -1,0 +1,36 @@
+﻿namespace VRS_Eng_Manage_Tool.Data.Enum.SearchFields
+{
+    public enum OpCode
+    {
+        MRNSET_equal,
+        MAPSET_equal,
+        SSN_equal,
+        CCGT_equal,
+        CGGTMOD_equal,
+        GTMODID_equal,
+        TESTMODE_equal,
+        LOOPSET_space_equal,
+        FALLBACK_equal,
+        OPTSN_equal,
+        CGSELID_equal,
+        CDSELID_equal,
+        OPCSN_equal,
+        ACTSN_equal,
+        PPMEASREQD_equal,
+        CGPCACTION_equal,
+        GTTSN_equal,
+        NETDOM_equal,
+        NDGT_equal,
+        MRN_equal,
+        OPCODE_equal,
+        ACN_equal,
+        DPC_equal,
+        CGPC_equal,
+        OPC_equal,
+        NPSN_equal,
+        SADDR_equal,
+        EADDR_equal,
+        DEFMAPVR_equal,
+        PRIO_space_equal
+    }
+}

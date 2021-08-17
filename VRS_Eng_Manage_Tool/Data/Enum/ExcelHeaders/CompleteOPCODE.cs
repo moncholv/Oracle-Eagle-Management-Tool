@@ -1,0 +1,41 @@
+﻿namespace VRS_Eng_Manage_Tool.Data.Enum.ExcelHeaders
+{
+    public enum CompleteOPCODE
+    {
+        Table,
+        ACN,
+        OPCODE,
+        PKGTYPE,
+        XLAT,
+        RI,
+        ITU_PC,
+        MRNSET,
+        MAPSET,
+        SSN,
+        CCGT,
+        CGGTMOD,
+        GTMODID,
+        TESTMODE,
+        LOOPSET,
+        FALLBACK,
+        OPTSN,
+        CGSELID,
+        CDSELID,
+        OPCSN,
+        ACTSN,
+        PPMEASREQD,
+        CGPCACTION,
+        DEFMAPVR,
+        PRIO,
+        GTTSN,
+        NETDOM,
+        NDGT,
+        MRN,
+        DPC,
+        CGPC,
+        OPC,
+        NPSN,
+        SADDR,
+        EADDR
+    }
+}

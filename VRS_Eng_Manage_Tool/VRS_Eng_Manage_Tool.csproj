@@ -1,0 +1,604 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B1F8674-98DA-4FCF-9B1B-66A455F68ECE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VRS_Eng_Manage_Tool</RootNamespace>
+    <AssemblyName>VRS_Eng_Manage_Tool</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>VRS_Eng_Manage_Tool.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>VRS_EngineeringTool.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\..\CargaDatosNominas\CargaDatosNominas\Dlls\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelLibrary">
+      <HintPath>..\..\Dlls\ExcelLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.1.22.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqKit.1.1.22\lib\net45\LinqKit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\UserControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Audit\Audits.cs" />
+    <Compile Include="Business\Audit\Commands.cs" />
+    <Compile Include="Business\Excel\Audits.cs" />
+    <Compile Include="Business\Excel\OST.cs" />
+    <Compile Include="Business\Excel\Reports.cs" />
+    <Compile Include="Business\GetSTP_data.cs" />
+    <Compile Include="Business\Import_STP_data.cs" />
+    <Compile Include="Business\OnlyNumbers.cs" />
+    <Compile Include="Business\Predicate.cs" />
+    <Compile Include="Business\PredicateBuilder.cs" />
+    <Compile Include="Business\ReplaceParameterVisitor.cs" />
+    <Compile Include="Business\Romina.cs" />
+    <Compile Include="Business\SS7_PointCode_Converter.cs" />
+    <Compile Include="Business\Utilities.cs" />
+    <Compile Include="Data\Audits\AuditResult.cs" />
+    <Compile Include="Data\Audits\LoopsetData.cs" />
+    <Compile Include="Data\Confluence\Agreements.cs" />
+    <Compile Include="Data\Confluence\Enum\Agent_Type.cs" />
+    <Compile Include="Data\Confluence\Enum\Connection_Type.cs" />
+    <Compile Include="Data\Enum\Audit\ResultType.cs" />
+    <Compile Include="Data\Enum\DSTN_Type.cs" />
+    <Compile Include="Data\Enum\ExcelHeaders\ASSOC.cs" />
+    <Compile Include="Data\Enum\ExcelHeaders\CompleteHeaderGTTSET.cs" />
+    <Compile Include="Data\Enum\ExcelHeaders\CompleteOPCODE.cs" />
+    <Compile Include="Data\Enum\ExcelHeaders\DSTN.cs" />
+    <Compile Include="Data\Enum\ExcelHeaders\GTTSEL.cs" />
+    <Compile Include="Data\Enum\ExcelHeaders\HOST.cs" />
+    <Compile Include="Data\Enum\ExcelHeaders\LOOPSET.cs" />
+    <Compile Include="Data\Enum\ExcelHeaders\MAPSET.cs" />
+    <Compile Include="Data\Enum\ExcelHeaders\MRNSET.cs" />
+    <Compile Include="Data\Enum\ExcelHeaders\SimpleGTA.cs" />
+    <Compile Include="Data\Enum\ExcelHeaders\SimpleHeaderGTTSET.cs" />
+    <Compile Include="Data\Enum\ExcelHeaders\SimpleOPCODE.cs" />
+    <Compile Include="Data\Enum\ExcelHeaders\SLK.cs" />
+    <Compile Include="Data\Enum\ExcelHeaders\TTMAP.cs" />
+    <Compile Include="Data\Enum\ExcelType.cs" />
+    <Compile Include="Data\Enum\GTTSET_Type.cs" />
+    <Compile Include="Data\Enum\Host_Type.cs" />
+    <Compile Include="Data\Enum\icaFiles.cs" />
+    <Compile Include="Data\Enum\ImportMode.cs" />
+    <Compile Include="Data\Enum\ItemsSelected\ASSOC.cs" />
+    <Compile Include="Data\Enum\ItemsSelected\GTTSET.cs" />
+    <Compile Include="Data\Enum\ItemsSelected\GTTSEL.cs" />
+    <Compile Include="Data\Enum\ItemsSelected\GTA.cs" />
+    <Compile Include="Data\Enum\ItemsSelected\HOST.cs" />
+    <Compile Include="Data\Enum\ItemsSelected\DSTN.cs" />
+    <Compile Include="Data\Enum\ItemsSelected\LOOPSET.cs" />
+    <Compile Include="Data\Enum\ItemsSelected\MAPSET.cs" />
+    <Compile Include="Data\Enum\ItemsSelected\SLK.cs" />
+    <Compile Include="Data\Enum\ItemsSelected\MRNSET.cs" />
+    <Compile Include="Data\Enum\ItemsSelected\OPCODE.cs" />
+    <Compile Include="Data\Enum\ItemsSelected\TTMAP.cs" />
+    <Compile Include="Data\Enum\LoopsetType.cs" />
+    <Compile Include="Data\Enum\ModuleType.cs" />
+    <Compile Include="Data\Enum\OperationType.cs" />
+    <Compile Include="Data\Enum\OST_Types.cs" />
+    <Compile Include="Data\Enum\ExcelHeaders\CompleteGTA.cs" />
+    <Compile Include="Data\Enum\RangeType.cs" />
+    <Compile Include="Data\Enum\Romina\Headers.cs" />
+    <Compile Include="Data\Enum\Romina\SearchTYpe.cs" />
+    <Compile Include="Data\OperatorData.cs" />
+    <Compile Include="Data\OST\LOOPSET_Data.cs" />
+    <Compile Include="Data\OST\MAPSET_Data.cs" />
+    <Compile Include="Data\OST\TTMAP_Data.cs" />
+    <Compile Include="Data\Predicates\PredicateResult_LOOPSET.cs" />
+    <Compile Include="Data\Predicates\PredicateResult_MAPSET.cs" />
+    <Compile Include="Data\Predicates\PredicateResult_TTMAP.cs" />
+    <Compile Include="Data\Romina\RominaAgent.cs" />
+    <Compile Include="Data\Enum\SearchFields\GTA.cs" />
+    <Compile Include="Data\Enum\SearchFields\GTTSEL.cs" />
+    <Compile Include="Data\Enum\SearchFields\OpCode.cs" />
+    <Compile Include="Data\Enum\SearchFields\Required\GTA.cs" />
+    <Compile Include="Data\Enum\SearchFields\Required\OpCode.cs" />
+    <Compile Include="Data\Enum\SearchType.cs" />
+    <Compile Include="Data\Enum\STP.cs" />
+    <Compile Include="Data\ExcelOST.cs" />
+    <Compile Include="Data\LoadedInfo.cs" />
+    <Compile Include="Data\MessageItem.cs" />
+    <Compile Include="Data\OST\ASSOC_Data.cs" />
+    <Compile Include="Data\OST\DSTN_Data.cs" />
+    <Compile Include="Data\OST\GTA_Data.cs" />
+    <Compile Include="Data\OST\GTTSEL_Data.cs" />
+    <Compile Include="Data\OST\GTTSET_Data.cs" />
+    <Compile Include="Data\OST\HOST_Data.cs" />
+    <Compile Include="Data\OST\MRNSET_Data.cs" />
+    <Compile Include="Data\OST\OPCODE_Data.cs" />
+    <Compile Include="Data\OST\SLK_Data.cs" />
+    <Compile Include="Data\OST\STP_Info.cs" />
+    <Compile Include="Data\Predicates\PredicateResult_ASSOC.cs" />
+    <Compile Include="Data\Predicates\PredicateResult_GTTSET.cs" />
+    <Compile Include="Data\Predicates\PredicateResult_GTTSEL.cs" />
+    <Compile Include="Data\Predicates\PredicateResult_GTA.cs" />
+    <Compile Include="Data\Predicates\PredicateResult_DSTN.cs" />
+    <Compile Include="Data\Predicates\PredicateResult_MRNSET.cs" />
+    <Compile Include="Data\Predicates\PredicateResult_HOST.cs" />
+    <Compile Include="Data\Predicates\PredicateResult_SLK.cs" />
+    <Compile Include="Data\Predicates\PredicateResult_OPCODE.cs" />
+    <Compile Include="Data\ResultItem.cs" />
+    <Compile Include="Data\Romina\RominaAgentBasic.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\OST\ASSOC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OST\ASSOC.Designer.cs">
+      <DependentUpon>ASSOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OST\GTTSET.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OST\GTTSET.Designer.cs">
+      <DependentUpon>GTTSET.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OST\HOST.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OST\HOST.Designer.cs">
+      <DependentUpon>HOST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OST\GTTSEL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OST\GTTSEL.Designer.cs">
+      <DependentUpon>GTTSEL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OST\LOOPSET.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OST\LOOPSET.Designer.cs">
+      <DependentUpon>LOOPSET.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OST\MAPSET.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OST\MAPSET.Designer.cs">
+      <DependentUpon>MAPSET.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OST\SLK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OST\SLK.Designer.cs">
+      <DependentUpon>SLK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OST\GTA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OST\GTA.Designer.cs">
+      <DependentUpon>GTA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OST\DSTN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OST\DSTN.Designer.cs">
+      <DependentUpon>DSTN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OST\MRNSET.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OST\MRNSET.Designer.cs">
+      <DependentUpon>MRNSET.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OST\OPCODE.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OST\OPCODE.Designer.cs">
+      <DependentUpon>OPCODE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OST\TTMAP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OST\TTMAP.Designer.cs">
+      <DependentUpon>TTMAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Audits\Loopsets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Audits\Loopsets.Designer.cs">
+      <DependentUpon>Loopsets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Audits\MTP_Connections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Audits\MTP_Connections.Designer.cs">
+      <DependentUpon>MTP_Connections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FileGenerated.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\FileGenerated.Designer.cs">
+      <DependentUpon>FileGenerated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Reports\RTMT_keys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Reports\RTMT_keys.Designer.cs">
+      <DependentUpon>RTMT_keys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Romina\Help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Romina\Help.Designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SFTP\Downloads.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\SFTP\Downloads.Designer.cs">
+      <DependentUpon>Downloads.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SFTP\SelectionSTP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\SFTP\SelectionSTP.Designer.cs">
+      <DependentUpon>SelectionSTP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SFTP\SFTP_values.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\SFTP\SFTP_values.Designer.cs">
+      <DependentUpon>SFTP_values.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SS7_PC_Converter\14bit383_Decimal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\SS7_PC_Converter\14bit383_Decimal.Designer.cs">
+      <DependentUpon>14bit383_Decimal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SFTP\User_Pass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\SFTP\User_Pass.Designer.cs">
+      <DependentUpon>User_Pass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SS7_PC_Converter\Decimal_14bit383.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\SS7_PC_Converter\Decimal_14bit383.Designer.cs">
+      <DependentUpon>Decimal_14bit383.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\STP_Data\LoadedData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\STP_Data\LoadedData.Designer.cs">
+      <DependentUpon>LoadedData.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControls\OST\ASSOC.resx">
+      <DependentUpon>ASSOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OST\GTTSET.resx">
+      <DependentUpon>GTTSET.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OST\HOST.resx">
+      <DependentUpon>HOST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OST\GTTSEL.resx">
+      <DependentUpon>GTTSEL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OST\LOOPSET.resx">
+      <DependentUpon>LOOPSET.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OST\MAPSET.resx">
+      <DependentUpon>MAPSET.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OST\SLK.resx">
+      <DependentUpon>SLK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OST\GTA.resx">
+      <DependentUpon>GTA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OST\DSTN.resx">
+      <DependentUpon>DSTN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OST\MRNSET.resx">
+      <DependentUpon>MRNSET.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OST\OPCODE.resx">
+      <DependentUpon>OPCODE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OST\TTMAP.resx">
+      <DependentUpon>TTMAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Audits\Loopsets.resx">
+      <DependentUpon>Loopsets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Audits\MTP_Connections.resx">
+      <DependentUpon>MTP_Connections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\FileGenerated.resx">
+      <DependentUpon>FileGenerated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Reports\RTMT_keys.resx">
+      <DependentUpon>RTMT_keys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Romina\Help.resx">
+      <DependentUpon>Help.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\SFTP\Downloads.resx">
+      <DependentUpon>Downloads.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\SFTP\SelectionSTP.resx">
+      <DependentUpon>SelectionSTP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\SFTP\SFTP_values.resx">
+      <DependentUpon>SFTP_values.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\SS7_PC_Converter\14bit383_Decimal.resx">
+      <DependentUpon>14bit383_Decimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\SFTP\User_Pass.resx">
+      <DependentUpon>User_Pass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\SS7_PC_Converter\Decimal_14bit383.resx">
+      <DependentUpon>Decimal_14bit383.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\STP_Data\LoadedData.resx">
+      <DependentUpon>LoadedData.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FadingSquares.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\AdvancedSearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\Searchbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\ShowData.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\ShowInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\Confluence.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\Confluence.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\SelectFolder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\STPs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\Checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\Checked_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\Unchecked_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\Excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\Excel_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\clear2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\clear_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\clear_button_disables.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MLVSoft_Common\MLVSoft_Common.csproj">
+      <Project>{98a083f6-1479-47e8-b778-9dfe024a4708}</Project>
+      <Name>MLVSoft_Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\File.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\folder_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\STP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\Llave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\DownLine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\HLine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\VLine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\STP_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\GSMA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\PDF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\xml.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\folder_button_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\close_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\online.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\load.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\romina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\gsma_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\gsma_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\converter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\citrix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\groupArrow.png" />
+    <None Include="Media\closed_small.png" />
+    <None Include="Media\rightArrow.png" />
+    <None Include="Media\keyButton.png" />
+    <None Include="Media\questionMark.png" />
+    <None Include="Media\notOpened.png" />
+    <None Include="Media\downArrow.png" />
+    <None Include="Media\AuditData.png" />
+    <None Include="Media\AuditData_20.png" />
+    <None Include="Media\load_data.png" />
+    <None Include="Media\loopset.png" />
+    <None Include="Media\loopset.ico" />
+    <None Include="Media\VRS_eng_tool.png" />
+    <None Include="Media\Manual_small.png" />
+    <None Include="Media\command.png" />
+    <None Include="Media\freeMemory.png" />
+    <None Include="Media\selectSTP.png" />
+    <None Include="Media\mtp.png" />
+    <None Include="Media\messageFlow.png" />
+    <Content Include="VRS_EngineeringTool.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

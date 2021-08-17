@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRS_Eng_Manage_Tool", "VRS_Eng_Manage_Tool\VRS_Eng_Manage_Tool.csproj", "{5B1F8674-98DA-4FCF-9B1B-66A455F68ECE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLVSoft_Common", "MLVSoft_Common\MLVSoft_Common.csproj", "{98A083F6-1479-47E8-B778-9DFE024A4708}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B1F8674-98DA-4FCF-9B1B-66A455F68ECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B1F8674-98DA-4FCF-9B1B-66A455F68ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B1F8674-98DA-4FCF-9B1B-66A455F68ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B1F8674-98DA-4FCF-9B1B-66A455F68ECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98A083F6-1479-47E8-B778-9DFE024A4708}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98A083F6-1479-47E8-B778-9DFE024A4708}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98A083F6-1479-47E8-B778-9DFE024A4708}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98A083F6-1479-47E8-B778-9DFE024A4708}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

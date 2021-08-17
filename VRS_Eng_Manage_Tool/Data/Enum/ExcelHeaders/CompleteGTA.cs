@@ -1,0 +1,42 @@
+﻿namespace VRS_Eng_Manage_Tool.Data.Enum.ExcelHeaders
+{
+    public enum CompleteGTA
+    {
+        TABLE,
+        Start_GTA,
+        End_GTA,
+        XLAT,
+        RI,
+        ITU_PC,
+        MRNSET,
+        MAPSET,
+        SSN,
+        CCGT,
+        CGGTMOD,
+        GTMODID,
+        TESTMODE,
+        LOOPSET,
+        FALLBACK,
+        OPTSN,
+        CGSELID,
+        CDSELID,
+        OPCSN,
+        ACTSN,
+        PPMEASREQD,
+        CGPCACTION,
+        GTTSN,
+        NETDOM,
+        NDGT,
+        MRN,
+        OPCODE,
+        ACN,
+        DPC,
+        CGPC,
+        OPC,
+        NPSN,
+        SADDR,
+        EADDR,
+        DEFMAPVR,
+        PRIO
+    }
+}

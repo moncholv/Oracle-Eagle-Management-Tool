@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="VRS_Eng_Manage_Tool.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="server" Type="System.String" Scope="User">
+      <Value Profile="(Default)">85.205.247.204</Value>
+    </Setting>
+    <Setting Name="remotePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/export/home/vrshub/scripts/OST/rtrv</Value>
+    </Setting>
+    <Setting Name="LocalPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Complete" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="RominaPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="RtmtCsvSeparator" Type="System.String" Scope="User">
+      <Value Profile="(Default)">|</Value>
+    </Setting>
+    <Setting Name="RtmtExcelSeparator" Type="System.String" Scope="User">
+      <Value Profile="(Default)">;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

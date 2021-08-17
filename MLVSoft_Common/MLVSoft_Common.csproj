@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{98A083F6-1479-47E8-B778-9DFE024A4708}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MLVSoft_Common</RootNamespace>
+    <AssemblyName>MLVSoft_Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus">
+      <HintPath>..\Dlls\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelLibrary">
+      <HintPath>..\Dlls\ExcelLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReflectSoftware.Insight, Version=5.6.1.1604, Culture=neutral, PublicKeyToken=c78ddbdaf1f32b08, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReflectSoftware.Insight.5.6.1.2\lib\net45\ReflectSoftware.Insight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReflectSoftware.Insight.Extensions.Log4net, Version=5.6.2.1704, Culture=neutral, PublicKeyToken=19d655a8a8766161, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReflectSoftware.Insight.Extensions.Log4net.5.6.2\lib\net45\ReflectSoftware.Insight.Extensions.Log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Results\AdvancedResultItem.cs" />
+    <Compile Include="Data\Results\SimpleResultItem.cs" />
+    <Compile Include="Enumerators\UpdateType.cs" />
+    <Compile Include="Excel\EpplusManagement.cs" />
+    <Compile Include="Excel\ExcelBuilder.cs" />
+    <Compile Include="Excel\Utilities.cs" />
+    <Compile Include="PredicateBuilder\Condition.cs" />
+    <Compile Include="PredicateBuilder\Operation.cs" />
+    <Compile Include="PredicateBuilder\Operator.cs" />
+    <Compile Include="PredicateBuilder\PredicateBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\DateTimeUtilities.cs" />
+    <Compile Include="Utilities\DictionaryBuilder.cs" />
+    <Compile Include="Utilities\FilesManagement.cs" />
+    <Compile Include="Utilities\General.cs" />
+    <Compile Include="Utilities\OnlyNumbers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="XML\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
