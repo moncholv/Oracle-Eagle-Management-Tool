@@ -129,9 +129,6 @@ namespace VRS_Eng_Manage_Tool.Windows.SFTP
                 User = username_textBox.Text;
                 Password = Password_textBox.Text;
 
-                //TODO --> QUITAR
-                Password = "Dd8163.9";
-
                 DownloadServerFiles();
                 this.Close_button.Focus();
             }
